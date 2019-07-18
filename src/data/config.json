@@ -1,0 +1,5 @@
+{
+    "urls":{
+        "ContactFormurl": "https://j8ma17zx9l.execute-api.us-east-1.amazonaws.com/dev/email/send"
+    }
+}
