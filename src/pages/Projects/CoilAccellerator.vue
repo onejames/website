@@ -1,52 +1,134 @@
 <template>
   <div>
-    <p>
-      This is all about the Coil Accellerator here!
-    </p>
 
-    <img id="coilAccelleratorImg" usemap="#image-map" src="static/projectImages/coilAccellerator/coilAccellerator.jpg" style="width:100%">
+    <div id="titleBlock" ></div>
 
-    <map id="coilAccelleratorImgMap" name="image-map">
-        <area target="" alt="Diode array" title="Diode array" href="javascript://" coords="708,284,613,148,1058,158,1127,290" shape="poly">
-        <area target="" alt="SCRs" title="SCRs" href="javascript://" coords="1153,435,1815,432,1815,778,1124,788" shape="poly">
-        <area target="" alt="Chargers" title="Chargers" href="javascript://" coords="1837,429,1828,50,2137,50,2146,104,2458,104,2468,425" shape="poly">
-        <area target="" alt="Battery Bank" title="Battery Bank" href="javascript://" coords="2629,413,3332,413,3335,60,2660,54,2616,107" shape="poly">
-        <area target="" alt="Voltage of Capacitor Bank" title="Voltage of Capacitor Bank" href="javascript://" coords="2228,1242,2250,501,2701,492,2651,1235" shape="poly">
-        <area target="" alt="Control group" title="Control group" href="javascript://" coords="3231,1320,3202,422,3471,413,3483,448,3546,448,3556,533,3483,592,3509,1302" shape="poly">
-        <area target="" alt="Capacitor Bank" title="Capacitor Bank" href="javascript://" coords="14,1078,33,362,471,359,888,794,881,1100" shape="poly">
-        <area target="" alt="Breach" title="Breach" href="javascript://" coords="3256,1632,3244,1421,2704,1424,2711,1632" shape="poly">
-        <area target="" alt="Primary Coil" title="Primary Coil" href="javascript://" coords="2685,1664,2685,1396,2206,1399,2209,1664" shape="poly">
-        <area target="" alt="Secondary Coil" title="Secondary Coil" href="javascript://" coords="1578,1658,1582,1437,1178,1437,1175,1655" shape="poly">
-        <area target="" alt="Tertiary Coil" title="Tertiary Coil" href="javascript://" coords="402,1651,408,1406,52,1412,43,1658" shape="poly">
-        <area target="" alt="Trigger A" title="Trigger A" href="javascript://" coords="1856,1639,1859,1424,1966,1428,1966,1645" shape="poly">
-        <area target="" alt="Trigger B" title="Trigger B" href="javascript://" coords="736,1642,888,1645,897,1421,730,1424" shape="poly">
-        <area target="" alt="Bolts" title="Bolts" href="javascript://" coords="3367,1402,3376,1648,3559,1658,3553,1377" shape="poly">
-    </map>
+    <div id="coilAccelleratorImageWrapper">
+      <img src="static/projectImages/coilAccellerator/coilAccellerator.jpg" />
+      <svg id="coilSvg" viewBox="0 0 3570 1727" preserveAspectRatio="xMidYMid meet"> </svg>
+      <div id="description"></div>
+    </div>
+
+    <div class="sexyLine"></div>
+
+    <div class="projectText">
+      <p>This is the completed V2 of my coil gun.</p>
+
+      <p>Inspirations, resources, and further reading:</p>
+      <ul>
+        <li><a href="https://www.coilgun.info/about/home.htm">Barry's Coilgun Design Site</a></li>
+        <li><a href="http://www.powerlabs.org/gaussgun.htm"> Power Labs gaussgun</a></li>
+      </ul>
+    </div>
+
   </div>
 </template>
 
 <script>
 import config from '@/data/config.json'
-
-import Footer from '@/components/Footer.vue'
-
-import ImageMap from 'image-map'
+import polys from '@/data/Projects/CoilAccellerator/polys.json'
 
 export default {
   name: 'ProjectCoilAccellerator',
   components: {
-    Footer
   },
   methods: {
+    drawPoly: function (svg, poly) {
+      var polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon')
 
+      polygon.id = poly.id
+      polygon.onclick = function () {
+        if (poly.href === null) {
+          return null
+        }
+        this.navigate(poly.href)
+      }.bind(this, poly)
+
+      svg.appendChild(polygon)
+
+      for (var i = 0; i < poly.pos.length; i++) {
+        var point = svg.createSVGPoint()
+
+        point.x = poly.pos[i].x
+        point.y = poly.pos[i].y
+
+        polygon.points.appendItem(point)
+      }
+
+      if ('positionalImage' in poly) {
+        var img = new Image()
+        img.id = poly.id + '_img'
+        img.src = poly.positionalImage.src
+        img.className = 'polyFlotingImage'
+        img.style.left = poly.positionalImage.x + '%'
+        img.style.top = poly.positionalImage.y + '%'
+        img.style.width = poly.positionalImage.width + '%'
+        document.getElementById('coilAccelleratorImageWrapper').appendChild(img)
+      }
+
+      return polygon
+    },
+    drawOnImage: function () {
+      var svg = document.getElementById('coilSvg')
+
+      for (var i = 0; i < this.polys.length; i++) {
+        var polygon = this.drawPoly(svg, this.polys[i])
+        this.addPolyEvents(polygon)
+      }
+
+      // svg.width = '98%'
+    },
+    addPolyEvents: function (polygon) {
+      polygon.onmouseover = function (eve) {
+        var data = this.getPolyDataById(eve.srcElement.id)
+        document.getElementById('titleBlock').innerHTML = data.title
+
+        var description = document.getElementById('description')
+        description.innerHTML = data.description
+        description.style.visibility = null
+        description.style.left = data.descriptionLocation.x + '%'
+        description.style.top = data.descriptionLocation.y + '%'
+
+        if ('positionalImage' in data) {
+          document.getElementById(data.id + '_img').style.visibility = null
+        }
+      }.bind(this)
+
+      polygon.onmouseout = function (eve) {
+        document.getElementById('titleBlock').innerHTML = null
+        document.getElementById('description').style.visibility = 'hidden'
+        document.getElementById('description').innerHTML = null
+      }
+    },
+    getPolyDataById: function (id) {
+      for (var i = 0; i < this.polys.length; i++) {
+        if (this.polys[i].id === id) {
+          return this.polys[i]
+        }
+      }
+
+      return null
+    },
+    navigate (detailPage) {
+      this.$router.push({ name: 'ProjectDetails', params: { projectId: 'CoilAccellerator', detailPage: detailPage } })
+    }
   },
   mounted: function () {
-    $.mapster = mapster
-    ImageMap('img[usemap]', 500)
+    document.getElementById('description').style.visibility = 'hidden'
+
+    var elements = document.getElementsByClassName('polyFlotingImage')
+    for (var i = 0; i < elements.length; i++) {
+      elements[i].style.visibility = 'hidden'
+    }
+
+    this.drawOnImage()
+
+    document.getElementById('titleBlock').scrollIntoView()
   },
   data () {
     return {
-      config: config
+      config: config,
+      polys: polys
     }
   }
 }
@@ -54,4 +136,71 @@ export default {
 
 <style scoped>
 
+#coilAccelleratorImageWrapper {
+  position: relative;
+  width: 100%;
+  margin: 5px;
+  padding: 2px;
+}
+
+#coilAccelleratorImageWrapper img{
+  width: 99%;
+  margin-bottom: 10px;
+}
+
+#coilAccelleratorImageWrapper svg{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 99%;
+}
+
+#description {
+    position: absolute;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 5px 5px 5px;
+    padding: 6px;
+    border-radius: 5px;
+    max-width: 33%;
+}
+
+#titleBlock {
+  height: 1em;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.projectText {
+    margin-left: 5%;
+}
+
+@import '../../../assets/css/project.css'
+
+</style>
+
+<style>
+.polyFlotingImage{
+    position: absolute;
+    box-shadow: 0px 0px 30px;
+    border: 2px solid white;
+}
+
+#coilAccelleratorImageWrapper svg polygon {
+  stroke-linejoin: round;
+  stroke-width: 10;
+  stroke: black;
+  stroke-opacity: .6;
+  fill-opacity: .4;
+}
+
+#coilAccelleratorImageWrapper svg polygon:hover {
+  fill: red;
+}
+
+.projectDetailLink {
+  font-size: .7em;
+  text-align: center;
+}
 </style>

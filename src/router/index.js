@@ -7,6 +7,7 @@ import HomePage from '@/pages/HomePage.vue'
 import Projects from '@/pages/Projects.vue'
 import Project from '@/pages/Project.vue'
 import Recipes from '@/pages/Recipes.vue'
+import ProjectDetails from '@/pages/ProjectDetails.vue'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/Projects/:projectId',
       name: 'Project',
       component: Project
+    },
+    {
+      path: '/Projects/:projectId/Details/:detailPage',
+      name: 'ProjectDetails',
+      component: ProjectDetails
     },
     {
       path: '/Recipes',

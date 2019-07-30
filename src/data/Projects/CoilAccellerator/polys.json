@@ -1,0 +1,121 @@
+[{
+  "id": "diodeArray",
+  "title": "Diode array",
+  "pos": [{"x": 708, "y": 284}, {"x": 613, "y": 148}, {"x": 1058, "y": 158}, {"x": 1127, "y": 290}],
+  "descriptionLocation": {"x": 15, "y": 20},
+  "description": "This is the protective diode array.",
+  "href": null
+},
+{
+  "id": "Silicon controlled rectifiers",
+  "title": "SCRs",
+  "pos": [{"x": 1153, "y": 435}, {"x": 1815, "y": 432}, {"x": 1815, "y": 778}, {"x": 1124, "y": 788}],
+  "descriptionLocation": {"x": 55, "y": 20},
+  "description": "This is the silicon controlled rectifier (scr) bank. These are solid state controllers for discharging the compacitors into the secondary and tertiary coils.<p class=\"projectDetailLink\">Click for more detials.</p>",
+  "href": "Scr"
+},
+{
+  "id": "chargers",
+  "title": "Chargers",
+  "pos": [{"x": 1837, "y": 429}, {"x": 1828, "y": 50}, {"x": 2137, "y": 50}, {"x": 2146, "y": 104}, {"x": 2458, "y":104}, {"x": 2468, "y": 425}],
+  "descriptionLocation": {"x": 40, "y": 35},
+  "description": "This stack of serries connected camera fhash chargers charge up the capicators. With a good source of power this takes several seconds. Once the capicators are at capicaty the lights will glow red. Voltage is monitored with the voltmeeter",
+  "href": null
+},
+{
+  "id": "batteries",
+  "title": "Battery Bank",
+  "pos": [{"x": 2629, "y": 413}, {"x": 3332, "y": 413}, {"x": 3335, "y": 60}, {"x": 2660, "y": 54}, {"x": 2616, "y":107}],
+  "descriptionLocation": {"x": 50, "y": 30},
+  "description": "These batteries supply 1.5V of power to the charging circuits.",
+  "href": null
+},
+{
+  "id": "voltmeeter",
+  "title": "Voltage of Capacitor Bank",
+  "pos": [{"x": 2228, "y": 1242}, {"x": 2250, "y": 501}, {"x": 2701, "y": 492}, {"x": 2651, "y": 1235}],
+  "descriptionLocation": {"x": 30, "y": 50},
+  "description": "This voltmeeter monitors the charge of the capicators.",
+  "href": null
+},
+{
+  "id": "controllGroup",
+  "title": "Control group",
+  "pos": [{"x": 3231, "y": 1320}, {"x": 3202, "y": 422}, {"x": 3471, "y": 413}, {"x": 3483, "y": 448}, {"x": 3546, "y":448}, {"x": 3556, "y": 533}, {"x": 3483, "y": 592}, {"x": 3509, "y": 1302}],
+  "descriptionLocation": {"x": 50, "y": 35},
+  "description": "The controll group has the basic controll functionality. <ul> <li>Capacitor charge</li><li>Trip circuit power</li><li>Discharge trigger</li></ul> ",
+  "href": null
+ },
+{
+  "id": "caps",
+  "title": "Capacitor Bank",
+  "pos": [{"x": 14, "y": 1078}, {"x": 33, "y": 362}, {"x": 471, "y": 359}, {"x": 888, "y": 794}, {"x": 881, "y":1100}],
+  "descriptionLocation": {"x": 30, "y": 30},
+  "description": "This is the capicator bank. It has 3 banks of 160uf, 350v capicators under the protectve cover. <ul><li><b>Bank 1</b>: 1280uf (8 caps)</li><li><b>Bank 2</b>: 640uf (4caps)</li><li><b>Bank 3</b>: 480uf (3 caps)</li></ul><p class=\"projectDetailLink\">Click for more detials.</p>",
+  "positionalImageFoo": {"x": 5, "y": 20, "width": 27, "src": "static/projectImages/coilAccellerator/capicatorBank.jpg"},
+  "href": "Capicators"
+},
+{
+  "id": "breech",
+  "title": "Breech",
+  "pos": [{"x": 3256, "y": 1632}, {"x": 3244, "y": 1421}, {"x": 2704, "y": 1424}, {"x": 2711, "y": 1632}],
+  "descriptionLocation": {"x": 63, "y": 60},
+  "description": "The projectiles are loaded here. Markers indicate depth that the bolt is inserted into the Primary Coil.",
+  "href": null
+},
+{
+  "id": "primaryCoil",
+  "title": "Primary Coil",
+  "pos": [{"x": 2685, "y": 1664}, {"x": 2685, "y": 1396}, {"x": 2206, "y": 1399}, {"x": 2209, "y": 1664}],
+  "descriptionLocation": {"x": 50, "y": 55},
+  "description": "The primary coil is the first coil to accelerate the projectile. This is the largest energy level and is tuned to utilize JULES HERE jules",
+  "href": null
+},
+{
+  "id": "secondaryCoil",
+  "title": "Secondary Coil",
+  "pos": [{"x": 1578, "y": 1658}, {"x": 1582, "y": 1437}, {"x": 1178, "y": 1437}, {"x": 1175, "y": 1655}],
+  "descriptionLocation": {"x": 20, "y": 60},
+  "description": "The seccondary coil is triggered by Trigger A and is tuned to utilize JULES HERE jules.",
+  "href": null
+},
+{
+  "id": "tertiaryCoil",
+  "title": "Tertiary Coil",
+  "pos": [{"x": 402, "y": 1651}, {"x": 408, "y": 1406}, {"x": 52, "y": 1412}, {"x": 43, "y": 1658}],
+  "descriptionLocation": {"x": 2, "y": 60},
+  "description": "This third coil is the least powerfull coil, triggered by Trigger B. It is tuned to utilize JULES HERE jules.",
+  "href": null
+},
+{
+  "id": "triggerA",
+  "title": "Trigger A",
+  "pos": [{"x": 1856, "y": 1639}, {"x": 1859, "y": 1424}, {"x": 1966, "y": 1428}, {"x": 1966, "y": 1645}],
+  "descriptionLocation": {"x": 45, "y": 70},
+  "description": "The first optical trigger",
+  "href": null
+},
+{
+  "id": "triggerB",
+  "title": "Trigger B",
+  "pos": [{"x": 736, "y": 1642}, {"x": 888, "y": 1645}, {"x": 897, "y": 1421}, {"x": 730, "y": 1424}],
+  "descriptionLocation": {"x": 15, "y": 70},
+  "description": "The seccond optical trigger",
+  "href": null
+},
+{
+  "id": "bolts",
+  "title": "Bolts",
+  "pos": [{"x": 3367, "y": 1402}, {"x": 3376, "y": 1648}, {"x": 3559, "y": 1658}, {"x": 3553, "y": 1377}],
+  "descriptionLocation": {"x": 60, "y": 55},
+  "description": "<p>Example Projectiles. Any slug of ferous material will work. These are nails.<p><p class=\"projectDetailLink\">Click for more detials.</p>",
+  "href": "Bolts"
+},
+{
+  "id": "controllLogic",
+  "title": "Controll Logic",
+  "pos": [{"x": 1526, "y": 920}, {"x": 1977, "y": 917}, {"x": 1974, "y": 1198}, {"x": 1523, "y": 1198}],
+  "descriptionLocation": {"x": 30, "y": 40},
+  "description": "This is the logic circirty for the optical triggers.",
+  "href": null
+}]

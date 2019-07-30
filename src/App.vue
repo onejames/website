@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view/>
+  <router-view/>
   </div>
 </template>
 
@@ -12,18 +12,28 @@ export default {
 
 <style>
 
-    .title {
-        width: 100%;
-    }
+  .title {
+    width: 100%;
+    margin: 2px;
+    font-size: 3em;
+  }
 
-    .has-text-centered {
-        text-align: center;
-    }
+  .has-text-centered {
+    text-align: center;
+  }
 
-    body {
-      margin: 0px;
-      height: 100%;
-      background-image: linear-gradient(#ffffff, #82c8ff);
-      background-attachment: fixed;
-    }
+  body {
+    height: 100%;
+    background-image: linear-gradient(#ffffff, #82c8ff);
+    background-attachment: fixed;
+    margin: auto;
+    text-align: center;
+  }
+
+  .sexyLine {
+    margin: 25px 0;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, black));
+  }
 </style>

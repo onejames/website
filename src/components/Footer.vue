@@ -36,6 +36,7 @@ export default {
     text-align: center;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     background: rgba(155, 155, 155, 0.8);
     z-index: 3;

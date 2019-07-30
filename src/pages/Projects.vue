@@ -3,12 +3,16 @@
 
     <h1 class="title has-text-centered">Projects</h1>
 
+    <div class="sexyLine"></div>
+
     <div id="projectListWrapper">
+
       <div class="project" v-for="(project, i) in projectsToShow" :index="i" :key="project.id" v-on:click="navigate(project)">
 
-        <h3 class="projectTitle">{{project.title}}</h3>
-
-        <img :src="project.image">
+        <h3 class="projectThumbTitle">{{project.title}}</h3>
+        <div class="projectThumbImgWrapper">
+          <img :src="project.image">
+        </div>
 
         <div class="description"><p>{{project.description}}</p></div>
 
@@ -22,7 +26,7 @@
 
 <script>
 import config from '@/data/config.json'
-import projectList from '@/data/projects.json'
+import projectList from '@/data/Projects/projects.json'
 
 import Footer from '@/components/Footer.vue'
 
@@ -54,7 +58,12 @@ export default {
 
 <style scoped>
 
-  h3 {
+  h1 {
+      margin-top: 2%;
+  }
+
+  .projectThumbTitle {
+    font-size: 1.3em;
     text-align: center;
   }
 
@@ -64,7 +73,6 @@ export default {
   }
 
   #projectListWrapper {
-    width: 730px;
     margin: auto;
     margin-bottom: 40px;
     padding: 15px;
@@ -72,6 +80,7 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
     background-color: rgba(250, 250, 250, 0.5);
+    max-width: 1024px;
   }
 
   .project {
@@ -86,7 +95,23 @@ export default {
   }
 
   .project img {
-    margin: 5%;
-    max-width: 90%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .projectThumbImgWrapper {
+    width: 180px;
+    height: 180px;
+    margin: auto;
+    padding: 0px;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .description {
+    text-align: center;
+    padding: 2px;
   }
 </style>
