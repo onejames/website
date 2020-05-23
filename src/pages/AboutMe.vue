@@ -21,6 +21,17 @@ export default {
 </script>
 
 <style scoped>
+
+  #aboutMe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h1 {
+    margin-top: 2%;
+  }
+
   #aboutMe {
     display: flex;
   }

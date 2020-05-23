@@ -1,11 +1,11 @@
 .projectTitle {
   font-size: 3em;
-  color: ff6600;
+  color: #ff6600;
   text-align: center;
 }
 
 .project {
-  max-width: 1024;
+  max-width: 1024px;
   flex-direction: column;
   flex-wrap: nowrap;
   padding: 5px;
@@ -14,12 +14,73 @@
   border-radius: 5px;
 }
 
+.project img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+}
+
+.subtitle {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.catchyParagraph {
+    line-height: 1.5em;
+}
+
+.catchyParagraph::first-letter {
+  color: #ff6600;
+  float: left;
+  font-family: Georgia;
+  font-size: 3em;
+  font-weight: bold;
+  padding: 15px 3px 8px 0px;
+  margin-bottom: 0px;
+}
+
+.imageHover {
+  position: relative;
+}
+
+.imageHover:hover:after {
+  content: '';
+  position: absolute;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/6d/Reeftank-fig1.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: visible;
+  left: 100%;
+  top: 0;
+  width: 500px;  /* These are just large enough to definitely   */
+  height: 500px; /* contain the image. Image could be any size. */
+}
+
+.quietLinks a{
+  text-decoration: none;
+}
+
+.tinyNote {
+    font-size: .7em;
+}
+
+.indicateToolTip {
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    cursor: default;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
 p {
   margin: 1%;
   overflow: hidden;
 }
 
 p img{
-  float:left;
-  margin: 1%;
+  margin: 2%;
 }

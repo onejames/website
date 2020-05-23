@@ -1,0 +1,38 @@
+[
+  {
+    "id": "pancakes",
+    "title": "Pancakes - Alton Brown",
+    "image": " /static/recpieImages/pancakes.jpg",
+    "description": "The best Pancakes ever. This recipe starts with making an 'instant' mix that will make 3 batches of pancakes."
+  },
+  {
+    "id": "chocolate-chip-cookies",
+    "title": "Big Fat Chocolate Chip Cookies",
+    "description": "These are huge chocolate chip cookies like you would find at a coffee shop Not to dissapoint!",
+    "image": " /static/recpieImages/chocolate-chip-cookies.jpg"
+  },
+  {
+    "id": 3,
+    "title": "bar",
+    "description": "The best instant Pancakes ever.",
+    "image": " /static/recpieImages/pancakes.jpg"
+  },
+  {
+    "id": 4,
+    "title": "baz",
+    "description": "The best instant Pancakes ever.",
+    "image": " /static/recpieImages/pancakes.jpg"
+  },
+  {
+    "id": 5,
+    "title": "bud",
+    "description": "The best instant Pancakes ever.",
+    "image": " /static/recpieImages/pancakes.jpg"
+  },
+  {
+    "id": 6,
+    "title": "bug",
+    "description": "The best instant Pancakes ever.",
+    "image": " /static/recpieImages/pancakes.jpg"
+  }
+]

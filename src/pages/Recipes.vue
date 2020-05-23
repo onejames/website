@@ -1,6 +1,9 @@
 <template>
   <div>
-
+    <div class="search">
+      <span class="fa fa-search"></span>
+      <input placeholder="Recipe Search" v-model="search">
+    </div>
     <carousel-3d
       :count="recipeList.length"
       :autoplay="true"
@@ -14,7 +17,7 @@
       :autoplayTimeout="500000"
       >
 
-      <slide v-for="(recipe, i) in recipeList" :index="i" :key="recipe.id" v-on:click="toggle">
+      <slide v-for="(recipe, i) in filteredList" :index="i" :key="recipe.id" >
 
         <h3>{{recipe.title}}</h3>
 
@@ -22,18 +25,9 @@
 
         <div class="description"><p>{{recipe.description}}</p></div>
 
-        <div v-for="(ingredientList, title) in recipe.ingredients" :key="title" class="ingredientList">
-          {{title}}
-          <ul v-for="ingredient in ingredientList" :key="ingredient">
-            <li >
-              {{ingredient}}
-            </li>
-          </ul>
-        </div>
-
-        <div class="markdown">
-          <markdown/>
-        </div>
+        <center>
+          <router-link :to="{ name: 'RecipesDetails', params: { recipeId: recipe.id }}">Read the instructions</router-link>
+        </center>
 
       </slide>
     </carousel-3d>
@@ -47,22 +41,18 @@
 import Footer from '@/components/Footer.vue'
 import { Carousel3d, Slide } from 'vue-carousel-3d'
 
-// import Recipe from '@/components/Recipe.vue'
-import recipeList from '@/data/recipes.json'
-import markdown from '@/data/Recipes/pancakes.md'
+import recipeList from '@/data/Recipes/recipeList.json'
 
 export default {
   name: 'Recipes',
   components: {
     Footer,
-    markdown,
     Carousel3d,
     Slide
     // Recipe
   },
   methods: {
     toggle () {
-      // this.toggleClass('showSection')
       console.log('foo')
     },
     slideNavigation () {
@@ -71,13 +61,16 @@ export default {
     }
   },
   computed: {
-    // componentLoader () {
-    //   return () => import('./${this.markdown}')
-    // }
+    filteredList () {
+      return this.recipeList.filter(recipe => {
+        return recipe.title.toLowerCase().includes(this.search.toLowerCase())
+      })
+    }
   },
   data () {
     return {
-      recipeList
+      'search': '',
+      'recipeList': recipeList
     }
   }
 }
@@ -85,6 +78,31 @@ export default {
 </script>
 
 <style scoped>
+
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+  .search {
+    position: relative;
+    color: #aaa;
+    margin-top: 1em;
+    font-size: 16px;
+  }
+
+  .search input {
+    width: 250px;
+    height: 32px;
+
+    background: #fcfcfc;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+    padding-left: 32px;
+  }
+
+  .search .fa-search {
+    position: relative;
+    left: 32px;
+  }
 
   .carousel-3d-container {
     width: 100%;
@@ -123,11 +141,6 @@ export default {
     z-index: 1;
     flex-basis: 30%;
     margin-top: 30px;
-  }
-
-  .ingredientList {
-    flex-basis: 40%;
-    justify-content: space-around;
   }
 
   .description {

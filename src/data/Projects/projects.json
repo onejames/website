@@ -2,9 +2,9 @@
     {
         "id": "LedTree",
         "title": "LED Tree",
-        "realPathImage": "/static/recpieImages/alton-brown-pancakes-2.jpg",
+        "realPathImage": "/static/recpieImages/pancakes.jpg",
         "image": "static/projectImages/ledTree/ledTree.gif",
-        "description": "A collection of RGB leds driven by an arduino, formed in the shape of a tree.",
+        "description": "A collection of RGB leds driven by an arduino, formed in the shape of a tree",
         "component": "pages/Projects/LedTree.vue",
         "show": true
     },
@@ -12,7 +12,7 @@
         "id": "CombustionLauncher",
         "title": "Combustion launcher",
         "image": "https://picsum.photos/200?random=2&blur=4",
-        "description": "This is a description about how neat this other thing is",
+        "description": "Classic spud gun, with some improvements",
         "component": "pages/Projects/CombustionLauncher.vue",
         "show": true
     },
@@ -20,7 +20,7 @@
         "id": "CoilAccellerator",
         "title": "Coil Accellerator",
         "image": "static/projectImages/coilAccellerator/coilAccellerator_thumb.jpg",
-        "description": "A Coil Accellerator uses electricity and an electromagnet to pull a magnetic bolt through a barrel.",
+        "description": "Coil Accellerator uses electricity and an electromagnet to pull a magnetic bolt through a barrel",
         "component": "pages/Projects/CoilAccellerator.vue",
         "hideOnProject": true,
         "show": true
@@ -29,7 +29,7 @@
         "id": "Fermentation",
         "title": "Fermentation",
         "image": "static/projectImages/Fermentation/fermenting.jpg",
-        "description": "Good beer. This is about brewing good beer.",
+        "description": "Good beer is always a good thing. This is about brewing good beer.",
         "component": "pages/Projects/Fermentation.vue",
         "show": true
     },
@@ -37,7 +37,7 @@
         "id": "3DDesign",
         "title": "3D Design",
         "image": "https://picsum.photos/200?random=16&blur=4",
-        "description": "This is a description about how neat this other thing is",
+        "description": "Most projects need components designed. This is about that process and the tools I use",
         "component": "pages/Projects/3DDesign.vue",
         "show": true
     },
@@ -45,7 +45,7 @@
         "id": "SpecialisedEquipment",
         "title": "Specialised Equipment",
         "image": "https://picsum.photos/200?random=17&blur=4",
-        "description": "This is a description about how neat this other thing is",
+        "description": "About the less comon tools I use, and those that I am making.",
         "component": "pages/Projects/SpecialisedEquipment.vue",
         "show": true
     },
@@ -61,7 +61,7 @@
         "id": "Greenhouse",
         "title": "Greenhouse",
         "image": "https://picsum.photos/200?random=4&blur=4",
-        "description": "This is a description about how neat this other thing is",
+        "description": "About the greenhuse and it's automation, Opengreen",
         "component": "pages/Projects/Greenhouse.vue",
         "show": true
     },
@@ -69,7 +69,7 @@
         "id": "Backpacking",
         "title": "Backpacking",
         "image": "https://picsum.photos/200?random=5&blur=4",
-        "description": "This is a description about how neat this other thing is",
+        "description": "Backpacking equipment, routes, lists, and trips",
         "component": "pages/Projects/Backpacking.vue",
         "show": true
     },
@@ -84,8 +84,8 @@
     {
         "id": "Aquariums",
         "title": "Aquariums",
-        "image": "https://picsum.photos/200?random=8&blur=4",
-        "description": "This is a description about how neat this other thing is",
+        "image": "static/projectImages/aquarium/30GalTank.jpg",
+        "description": "When life is loud, find peace underwater. - Kim",
         "component": "pages/Projects/Aquariums.vue",
         "show": true
     },
