@@ -17,7 +17,7 @@
     "@fortawesome/vue-fontawesome": "0.0.22",
     "image-map": "^1.1.6",
     "image-map-resizer": "^1.0.10",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.1",
     "vue": "^2.5.2",
     "vue-carousel-3d": "^0.1.20",
     "vue-resource": "^1.5.1",
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "aws-deploy-script-fe": "^1.0.9",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
@@ -68,7 +69,7 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dev-server": "^2.9.1",
+    "webpack-dev-server": "^2.11.5",
     "webpack-merge": "^4.1.0"
   },
   "engines": {

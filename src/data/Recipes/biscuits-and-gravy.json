@@ -1,0 +1,20 @@
+  {
+    "id": "biscuits-and-gravy",
+    "title": "Biscuits and gravy",
+    "image": "https://picsum.photos/300?random=100&blur=4",
+    "description": "Quick morning biscuits",
+    "ingredients": [
+      {
+        "title": "Additionally",
+        "list": [
+          { "amount": 1, "unit": "Log", "item": "Breakfast Sassage" }
+        ]
+      }
+    ],
+    "partials": [
+        "recipeParts/biscuits.json",
+        "recipeParts/gravy.json"
+    ],
+    "markdown": "Make the biscuits. While baking make gravy. Combine.",
+    "quantity": 12
+  }

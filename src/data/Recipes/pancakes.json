@@ -3,22 +3,34 @@
     "title": "Pancakes - Alton Brown",
     "image": " /static/recpieImages/pancakes.jpg",
     "description": "The best instant Pancakes ever.",
-    "ingredients": {
-      "Pancake Mix": [
-        "6 cups all-purpose flour",
-        "1 1/2 teaspoons baking soda",
-        "3 teaspoons baking powder",
-        "1 tablespoon kosher salt",
-        "2 tablespoons sugar"
-      ],
-      "For Pancakes": [
-        "2 eggs, separated",
-        "2 cups buttermilk",
-        "4 tablespoons melted butter",
-        "2 cups 'Instant Pancake Mix'",
-        "1 stick butter, for greasing the pan",
-        "2 cups fresh fruit, if desired"
-      ]
-    },
-    "markdown": "this is markdown"
+    "ingredients": [
+      {
+        "title": "Pancake Mix",
+        "list": [
+          { "amount": 750, "unit": "Grams", "item": "all-purpose flour" },
+          { "amount": 0.5, "unit": "Teaspoons", "item": "baking soda" },
+          { "amount": 3, "unit": "Teaspoons", "item": "baking powder" },
+          { "amount": 1, "unit": "Tablespoons", "item": "kosher salt" },
+          { "amount": 2, "unit": "Tablespoons", "item": "sugar" }
+        ]
+      },
+      {
+        "title": "For Pancakes",
+        "list": [
+          { "amount": 2, "unit": null, "item": "eggs, separated" },
+          { "amount": 2, "unit": "cups", "item": "Buttermilk" },
+          { "amount": 4, "unit": "Tablespoons", "item": "melted butter" },
+          { "amount": 2, "unit": "Cups", "item": "Pancake mix, as above." }
+        ]
+      },
+      {
+        "title": "Additionally",
+        "list": [
+          { "amount": 1, "unit": "Stick", "item": "Butter, for the pan" },
+          { "amount": 2, "unit": "Cups", "item": "Fruit" }
+        ]
+      }
+    ],
+    "markdown": "Mix pancake mix, this makes 3 batches. Mix pancakes, add Pancake Mix. Cook, Pancakes!",
+    "quantity": 10
   }

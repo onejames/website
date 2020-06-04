@@ -19,15 +19,18 @@
 
       <slide v-for="(recipe, i) in filteredList" :index="i" :key="recipe.id" >
 
-        <h3>{{recipe.title}}</h3>
+        <div class="left">
+          <h3>{{recipe.title}}</h3>
 
-        <img :src="recipe.image">
+          <div class="description"><p>{{recipe.description}}</p></div>
 
-        <div class="description"><p>{{recipe.description}}</p></div>
-
-        <center>
-          <router-link :to="{ name: 'RecipesDetails', params: { recipeId: recipe.id }}">Read the instructions</router-link>
-        </center>
+          <center class="recipeLink">
+            <router-link :to="{ name: 'RecipesDetails', params: { recipeId: recipe.id }}">Read the instructions</router-link>
+          </center>
+        </div>
+        <div class="right">
+          <img :src="recipe.image">
+        </div>
 
       </slide>
     </carousel-3d>
@@ -56,14 +59,15 @@ export default {
       console.log('foo')
     },
     slideNavigation () {
-      console.log('navigation')
-      console.log(this)
+      // console.log('navigation')
+      // console.log(this)
     }
   },
   computed: {
     filteredList () {
       return this.recipeList.filter(recipe => {
-        return recipe.title.toLowerCase().includes(this.search.toLowerCase())
+        var search = this.search.toLowerCase()
+        return (recipe.title.toLowerCase().includes(search) || recipe.description.toLowerCase().includes(search))
       })
     }
   },
@@ -126,26 +130,33 @@ export default {
     box-shadow: 0px 0px 40px grey;
   }
 
+  .left{
+    flex-basis: 70%;
+    z-index: 2;
+  }
+  .right{
+    flex-basis: 30%;
+    z-index: 1;
+  }
+
   h3 {
     margin-left: -10px;
     margin-right: -20%;
     padding: 10px;
     background-color: rgba(255, 99, 71, 0.5);
     flex-basis: 70%;
-    z-index: 2;
   }
 
   img {
-    max-width: 300px;
-    max-height: 300px;
-    z-index: 1;
-    flex-basis: 30%;
     margin-top: 30px;
   }
 
   .description {
-    flex-basis: 100%;
-    /* margin-top: -200px; */
+    flex-basis: 30%;
+  }
+
+  .recipeLink {
+
   }
 
   .showSection {

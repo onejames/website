@@ -1,0 +1,20 @@
+  {
+    "id": "gravy",
+    "title": "Basic white gravy",
+    "description": "A basic milk / flower gravy.",
+    "ingredients": [
+      {
+        "title": "Gravy",
+        "list": [
+          { "amount": 2, "unit": "cups", "item": "Milk" },
+          { "amount": 4, "unit": "Tablespoons", "item": "salt" },
+          { "amount": 2, "unit": "Cups", "item": "pepper" }
+        ]
+      }
+    ],
+    "partials": [
+        "recipeParts/rou.json"
+    ],
+    "markdown": "",
+    "quantity": 10
+  }

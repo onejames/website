@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="footerSpace">
     <div class="recipe">
 
       <h1 class="title has-text-centered">{{recipe.title}}</h1>
@@ -9,9 +9,9 @@
 
         <div class="ingredients">
           <h2 class="center">Ingredients</h2>
-          <div v-for="(ingredientList, title) in recipe.ingredients" :key="title" class="ingredientList">
-            {{title}} -
-            <ul v-for="ingredient in ingredientList" :key="ingredient">
+          <div v-for="(ingredientList, key) in recipe.ingredients" :key="key" class="ingredientList">
+            {{ingredientList.title}} -
+            <ul v-for="(ingredient, ikey) in ingredientList.list" :key="ikey">
               <li >
                 {{ingredient.amount}} {{ingredient.unit}} {{ingredient.item}}
               </li>
@@ -21,7 +21,7 @@
 
         <div class="markdown">
           <h2>Directions</h2>
-          <div v-html="recipe.markdown"></div>
+          <div v-html="recipe.markdown" class="directions"></div>
           <span class="makes"> Makes: {{recipe.quantity}} </span>
         </div>
 
@@ -60,65 +60,38 @@ export default {
     return {
       config: config,
       'recipeId': this.$route.params.recipeId,
-      'recipe': {}
+      'recipe': {},
+      'loaded': false
     }
   },
-  mounted () {
-    import('@/data/Recipes/' + this.$route.params.recipeId + '.json').then((data) => {
-      this.recipe = data
-    })
+  created () {
+    if (recipe === false) {
+      this.loadRecipe()
+      this.loaded = true
+    }
+  },
+  methods: {
+    loadRecipe () {
+      import('@/data/Recipes/' + this.$route.params.recipeId + '.json').then((data) => {
+        this.recipe = data
+        if (this.recipe.hasOwnProperty('partials')) {
+          data.partials.forEach(location => {
+              import('@/data/Recipes/' + location).then((partial) => {
+                partial.ingredients.forEach(list => {
+                  this.recipe.ingredients.push(list)
+                })
+                if (partial.markdown !== '') {
+                  this.recipe.markdown += ' ' + partial.markdown
+                }
+              })
+          })
+        }
+      })
+    }
   }
 }
 </script>
 
 <style scoped>
-
-  h1 {
-    margin-top: 15px;
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  .recipe {
-    max-width: 1024px;
-    padding: 15px;
-    margin: auto;
-    background-color: rgba(250, 250, 250, 0.5);
-    border-radius: 5px;
-    text-align: left;
-  }
-
-  .recipeBody {
-    display: flex;
-  }
-
-  .ingredients {
-    flex-direction: column;
-    flex-basis: 40%;
-    justify-content: space-around;
-  }
-
-  .markdown {
-    flex-basis: 50%;
-    text-indent: 1em;
-  }
-
-  .makes {
-      font-size: 1.25em;
-  }
-
-  .goback {
-    padding-top: 15px;
-    text-align: center;
-  }
-
-  .goback a {
-    text-decoration: none;
-  }
-
-  .goback span {
-    padding-right: 5px;
-  }
+  @import '../assets/css/recipe.css'
 </style>

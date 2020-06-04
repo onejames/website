@@ -2,27 +2,39 @@
     "id": "chocolate-chip-cookies",
     "title": "Chocolate Chip Cookies",
     "image": " /static/recpieImages/chocolate-chip-cookies.jpg",
-    "description": "The best instant Pancakes ever.",
-    "ingredients": {
-      "Dry": [
-        { "amount": 256, "unit": "Grams",    "item": "all-purpose flour" },
-        { "amount": 0.5, "unit": "Teaspoon", "item": "baking soda" },
-        { "amount": 0.5, "unit": "Teaspoon", "item": "salt" }
-      ],
-      "Wet": [
-        { "amount": 170,  "unit": "Grams", "item": "butter" },
-        { "amount": 200,  "unit": "Grams", "item": "brown sugar" },
-        { "amount": 104,  "unit": "Grams", "item": "granulated sugar" },
-        { "amount": 1,  "unit": null, "item": "egg" },
-        { "amount": 1,  "unit": null, "item": "egg yolk" }
-      ],
-      "Additions": [
-        { "amount": 1,  "unit": "tablespoon", "item": "vanilla" }
-      ],
-      "Mix In" : [
-        { "amount": 113,  "unit": "Grams", "item": "Chocolate Chips" }
-      ]
-    },
+    "description": "These are big fat cookies, like you would get at a coffee shop.",
+    "ingredients": [
+      {
+        "title": "Dry",
+        "list": [
+          { "amount": 256, "unit": "Grams",    "item": "all-purpose flour" },
+          { "amount": 0.5, "unit": "Teaspoon", "item": "baking soda" },
+          { "amount": 0.5, "unit": "Teaspoon", "item": "salt" }
+        ]
+      },
+      {
+        "title": "Wet",
+        "list": [
+          { "amount": 170,  "unit": "Grams", "item": "butter" },
+          { "amount": 200,  "unit": "Grams", "item": "brown sugar" },
+          { "amount": 104,  "unit": "Grams", "item": "granulated sugar" },
+          { "amount": 1,  "unit": null, "item": "egg" },
+          { "amount": 1,  "unit": null, "item": "egg yolk" }
+        ]
+      },
+      {
+        "title": "Additions",
+        "list": [
+          { "amount": 1,  "unit": "tablespoon", "item": "vanilla" }
+        ]
+      },
+      {
+        "title": "Mix In",
+        "list": [
+          { "amount": 113,  "unit": "Grams", "item": "Chocolate Chips" }
+        ]
+      }
+    ],
     "markdown": "<p> Sift all dry ingredients together. Mix all wet ingredients in the bowl of a stand mixer. Slowly add dry ingredients to wet. </p><p> Once fully incorporated mix in additions, then the mixins. Dough does not need to be cooled. Place 1/4C balled dough 6 to a 1/2 cookie sheet. Bake @ 375 for 17 -> 19 min.</p>",
     "quantity": 12
   }

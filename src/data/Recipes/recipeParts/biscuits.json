@@ -1,0 +1,19 @@
+  {
+    "id": "biscuits",
+    "title": "Basic Biscuits",
+    "description": "Basic biscuit recipe.",
+    "ingredients": [
+      {
+        "title": "Biscuits",
+        "list": [
+          { "amount": 750, "unit": "Grams", "item": "all-purpose flour" },
+          { "amount": 0.5, "unit": "Teaspoons", "item": "baking soda" },
+          { "amount": 3, "unit": "Teaspoons", "item": "baking powder" },
+          { "amount": 2, "unit": "cups", "item": "Buttermilk" },
+          { "amount": 4, "unit": "Tablespoons", "item": "butter" }
+        ]
+      }
+    ],
+    "markdown": "do things to make biscuits",
+    "quantity": 12
+  }
